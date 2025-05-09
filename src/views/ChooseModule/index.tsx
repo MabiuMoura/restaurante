@@ -7,7 +7,7 @@ const ModulePicker: React.FC = () => {
     return (
         <S.ModuleContainer>
             {Modules.map((module, index) => (
-                <ModuleOption key={index} module={module} backgroundColor={module.color}/>
+                <ModuleOption key={index} module={module} />
             ))}
         </S.ModuleContainer>
     );

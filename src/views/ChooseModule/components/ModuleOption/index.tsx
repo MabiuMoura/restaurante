@@ -5,11 +5,12 @@ interface ModuleOptionProps {
     module: {
         name: string;
         route: string;
+        color: string;
+        secundaryColor: string
     }
-    backgroundColor: string;
 }
 
-const ModuleOption = ({module, backgroundColor}:ModuleOptionProps) => {
+const ModuleOption = ({module}:ModuleOptionProps) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -17,8 +18,8 @@ const ModuleOption = ({module, backgroundColor}:ModuleOptionProps) => {
     };
 
     return (
-        <S.ModuleContainerBackground $backgroundColor={backgroundColor} onClick={handleClick}>
-            <S.ModuleContainerContent $backgroundColor={backgroundColor}>
+        <S.ModuleContainerBackground $backgroundColor={module.color} onClick={handleClick}>
+            <S.ModuleContainerContent $primaryColor={module.color} $secundaryColor={module.secundaryColor}>
                 {module.name}
             </S.ModuleContainerContent>
         </S.ModuleContainerBackground>
