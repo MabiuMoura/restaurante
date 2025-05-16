@@ -43,19 +43,20 @@ Este é um sistema estilo ERP desenvolvido para o restaurante da minha mãe, com
 
 ```bash
 git clone https://github.com/seu-usuario/erp-restaurante.git
-cd erp-restaurante
+cd erp-restaurante 
+```
 
 ---
 
 ### 2. Instale as dependencias
 
-npm install
+```npm install```
 
 ---
 
 ### Rode o projeto
 
-npm run dev
+```npm run dev```
 
 ---
 
