@@ -2,9 +2,16 @@ import styled from "styled-components";
 
 export const ReceiptsContainer = styled.div`
     display: flex;
-    flex-direction:row;
+    flex-direction:column;
     align-items: center;
-    justify-content: center;
     width: 100%;
     height: 100%;
+`
+
+export const ReceiptsHeader = styled.div`
+    width:100%;
+    height: 80px;
+    display:flex;
+    justify-content:start;
+    align-items:start;
 `
