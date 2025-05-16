@@ -8,13 +8,13 @@ export const Modules = [
     {
         name: 'Pagamentos',
         route: '/pagamentos',
-        color: '#9F1010',
-        secundaryColor: '#ddead1'
+        color: '#EE1F1F',
+        secundaryColor: '#9F1010'
     },
     {
         name: 'Relatórios',
         route: '/relatorio',
         color: '#D5AD0B',
-        secundaryColor: '#ddead1'
+        secundaryColor: '#BF9B0C'
     }
 ];
