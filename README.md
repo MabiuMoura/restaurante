@@ -1,54 +1,65 @@
-# restaurante# React + TypeScript + Vite
+# 🍽️ Restaurante ERP (em desenvolvimento)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um sistema estilo ERP desenvolvido para o restaurante da minha mãe, com o objetivo de facilitar o gerenciamento de pedidos, estoque, áreas administrativas e muito mais. O sistema está sendo construído em etapas, começando pelo front-end com **React** e posteriormente integrando um back-end completo.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚧 Status do Projeto
 
-## Expanding the ESLint configuration
+- 🟡 Em desenvolvimento  
+- ✅ Front-end (React + TypeScript) – em andamento  
+- 🔲 Back-end – ainda não iniciado
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 💡 Funcionalidades Planejadas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- [x] Seleção de módulos do sistema (ex: Pagamentos, Rebimentos, Relatórios)
+- [ ] Cadastro de venda
+- [ ] Cadastro de compra (estoque)
+- [ ] Relatórios de vendas
+- [ ] Painel financeiro
+- [ ] Integração com banco de dados
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🧰 Tecnologias utilizadas
+
+- React
+- TypeScript
+- Styled-components
+- React Router Dom
+- (Futuramente) Nest.js + PostgreSQL
+
+---
+
+## 📦 Como executar o projeto
+
+> ⚠️ Requisitos:
+> - Node.js `v18.16.0`
+> - Yarn `9.5.1`
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/seu-usuario/erp-restaurante.git
+cd erp-restaurante
+
+---
+
+### 2. Instale as dependencias
+
+npm install
+
+---
+
+### Rode o projeto
+
+npm run dev
+
+---
+
+## Autor
+
+Mabiu Moura
+Futuro full-stack developer | Apaixonado por soluções práticas e visão computacional
