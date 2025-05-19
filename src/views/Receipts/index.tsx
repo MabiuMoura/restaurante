@@ -1,6 +1,9 @@
 import ReturnPage from "../../components/ReturnPage";
-import StickyHeadTable from "../../components/Table";
+import ReceiptsTable from "./components/TableReceipts";
 import * as S from "./styles";
+import { MockedSales } from './Mock/datas';
+
+
 
 const Receipts = () => {
     return (
@@ -9,7 +12,10 @@ const Receipts = () => {
                 <ReturnPage/>
             </S.ReceiptsHeader>
             
-            <StickyHeadTable></StickyHeadTable>
+            <S.ReceiptsTableContainer>
+                <ReceiptsTable Sales={MockedSales} />
+            </S.ReceiptsTableContainer>
+            
         </S.ReceiptsContainer>
     )
 }

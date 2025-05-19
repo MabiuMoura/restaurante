@@ -14,4 +14,10 @@ export const ReceiptsHeader = styled.div`
     display:flex;
     justify-content:start;
     align-items:start;
+    margin-bottom: 50px;
 `
+
+export const ReceiptsTableContainer = styled.div`
+    margin-top:30px;
+    width: 100%;
+    `

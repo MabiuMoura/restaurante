@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
-import { PiKeyReturnLight } from "react-icons/pi";
 
 
 const ReturnPage: React.FC = () => {
