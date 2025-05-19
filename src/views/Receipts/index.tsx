@@ -1,4 +1,5 @@
 import ReturnPage from "../../components/ReturnPage";
+import StickyHeadTable from "../../components/Table";
 import * as S from "./styles";
 
 const Receipts = () => {
@@ -8,7 +9,7 @@ const Receipts = () => {
                 <ReturnPage/>
             </S.ReceiptsHeader>
             
-            receber
+            <StickyHeadTable></StickyHeadTable>
         </S.ReceiptsContainer>
     )
 }
