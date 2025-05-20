@@ -1,33 +1,28 @@
-import styled from 'styled-components';
+import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import { TableCell, TableRow } from '@mui/material';
+import { Table, TableCell, TableHead, TableRow, TableBody, TableContainer, TablePagination } from '@mui/material';
 
 export const TableWrapper = styled(Paper)`
-  width: 100%;
-  overflow: hidden;
-    
-
-  table {
-    border-collapse: collapse;
-  }
-
-  th, td {
-    padding: 8px;
-    font-size: 14px;
-  }
-
-  th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-  }
-
-  tr:hover {
-    background-color: #f9f9f9;
-  }
 `;
 
 export const StyledTableRow = styled(TableRow)`
-  &:hover {
-    background-color: red;
-  }
+
 `;
+
+export const StyledTableHead = styled(TableHead)`
+
+`
+
+export const StyledTableCell = styled(TableCell)`
+
+  `
+
+export const StyledTableCellHeader = styled(TableCell)`
+
+  `
+
+export const styledTable = styled(Table)`
+
+`
+
+

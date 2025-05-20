@@ -4,19 +4,32 @@ import type { ColumnTable, ISales } from '../../../../shared/constants/interface
 
 const columns: ColumnTable[] = [
   { id: 'almocos', label: 'Almoços', minWidth: 70, align: 'center', },
+    {
+    id: 'quentinha',
+    label: 'Quentinha',
+    minWidth: 170,
+    align: 'center',
+
+  },
+    {
+    id: 'quantidadeQuentinhas',
+    label: 'Nº Quentinhas',
+    minWidth: 170,
+    align: 'center',
+  },
   { id: 'bebidas', label: 'Bebidas', minWidth: 100, align: 'center',  },
   {
     id: 'sobremesas',
     label: 'Sobremesas',
     minWidth: 170,
-    align: 'right',
+    align: 'center',
     format: (value: number) => value.toLocaleString('pt-BR'),
   },
   {
     id: 'total',
     label: 'Total',
     minWidth: 170,
-    align: 'right',
+    align: 'center',
 
   },
   {

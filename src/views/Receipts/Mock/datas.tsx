@@ -8,6 +8,8 @@ export const MockedSales : ISales[] = [
         sobremesas: 0,
         total: 35.99,
         formaPagamento: "credito",
+        quentinha: false,
+        quantidadeQuentinhas: 0,
     },
     {
         almocos: 4,
@@ -15,13 +17,17 @@ export const MockedSales : ISales[] = [
         sobremesas: 1,
         total: 95.99,
         formaPagamento: "debito",
+        quentinha: false,
+        quantidadeQuentinhas: 0,
     },
     {
-        almocos: 1,
-        bebidas: 1,
+        almocos: 4,
+        bebidas: 2,
         sobremesas: 0,
-        total: 35.99,
+        total: 135.99,
         formaPagamento: "credito",
+        quentinha: true,
+        quantidadeQuentinhas: 2,
     },
     {
         almocos: 4,
@@ -29,6 +35,8 @@ export const MockedSales : ISales[] = [
         sobremesas: 1,
         total: 95.99,
         formaPagamento: "debito",
+        quentinha: true,
+        quantidadeQuentinhas: 1,
     },
     {
         almocos: 1,
@@ -36,6 +44,8 @@ export const MockedSales : ISales[] = [
         sobremesas: 0,
         total: 35.99,
         formaPagamento: "credito",
+        quentinha: false,
+        quantidadeQuentinhas: 0,
     },
     {
       almocos: 1,
@@ -43,6 +53,8 @@ export const MockedSales : ISales[] = [
       sobremesas: 0,
       total: 35.99,
       formaPagamento: "credito",
+      quentinha: false,
+      quantidadeQuentinhas: 0,
     },
     {
       almocos: 4,
@@ -50,6 +62,8 @@ export const MockedSales : ISales[] = [
       sobremesas: 1,
       total: 95.99,
       formaPagamento: "debito",
+      quentinha: false,
+      quantidadeQuentinhas: 0,
     },
     {
         almocos: 4,
@@ -57,6 +71,8 @@ export const MockedSales : ISales[] = [
         sobremesas: 1,
         total: 95.99,
         formaPagamento: "debito",
+        quentinha: false,
+        quantidadeQuentinhas: 0,
     },
     {
         almocos: 1,
@@ -64,6 +80,8 @@ export const MockedSales : ISales[] = [
         sobremesas: 0,
         total: 35.99,
         formaPagamento: "credito",
+        quentinha: false,
+        quantidadeQuentinhas: 0,
     },
     {
         almocos: 4,
@@ -71,6 +89,8 @@ export const MockedSales : ISales[] = [
         sobremesas: 1,
         total: 95.99,
         formaPagamento: "debito",
+        quentinha: false,
+        quantidadeQuentinhas: 0,
     },
     {
         almocos: 1,
@@ -78,6 +98,8 @@ export const MockedSales : ISales[] = [
         sobremesas: 0,
         total: 35.99,
         formaPagamento: "credito",
+        quentinha: false,
+        quantidadeQuentinhas: 0,
     },
     {
       almocos: 1,
@@ -85,6 +107,8 @@ export const MockedSales : ISales[] = [
       sobremesas: 0,
       total: 35.99,
       formaPagamento: "credito",
+      quentinha: false,
+      quantidadeQuentinhas: 0,
     },
     {
         almocos: 4,
@@ -92,6 +116,8 @@ export const MockedSales : ISales[] = [
         sobremesas: 1,
         total: 95.99,
         formaPagamento: "debito",
+        quentinha: true,
+        quantidadeQuentinhas: 1,
     },
     {
         almocos: 1,
@@ -99,6 +125,8 @@ export const MockedSales : ISales[] = [
         sobremesas: 0,
         total: 35.99,
         formaPagamento: "credito",
+        quentinha: false,
+        quantidadeQuentinhas: 0,
     },
     {
         almocos: 4,
@@ -106,6 +134,8 @@ export const MockedSales : ISales[] = [
         sobremesas: 1,
         total: 95.99,
         formaPagamento: "debito",
+        quentinha: false,
+        quantidadeQuentinhas: 0,
     },
     {
         almocos: 1,
@@ -113,6 +143,8 @@ export const MockedSales : ISales[] = [
         sobremesas: 0,
         total: 35.99,
         formaPagamento: "credito",
+        quentinha: false,
+        quantidadeQuentinhas: 0,
     },
     {
       almocos: 1,
@@ -120,5 +152,7 @@ export const MockedSales : ISales[] = [
       sobremesas: 0,
       total: 35.99,
       formaPagamento: "credito",
+      quentinha: false,
+      quantidadeQuentinhas: 0,
     },
 ];

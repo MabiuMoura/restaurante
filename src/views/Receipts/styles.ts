@@ -10,11 +10,12 @@ export const ReceiptsContainer = styled.div`
 
 export const ReceiptsHeader = styled.div`
     width:100%;
-    height: 80px;
+    height: 50px;
     display:flex;
     justify-content:start;
-    align-items:start;
+    align-items:center;
     margin-bottom: 50px;
+    gap: 50px;
 `
 
 export const ReceiptsTableContainer = styled.div`

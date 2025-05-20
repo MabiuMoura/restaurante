@@ -1,12 +1,12 @@
 import * as React from 'react';
-import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
+import { Table,
+   TableCell, 
+   TableHead, 
+   TableRow, 
+   TableBody, 
+   TableContainer, 
+   TablePagination,
+   Paper } from '@mui/material';
 import type { ColumnTable } from '../../shared/constants/interfaces';
 import * as S from './styles';
 
@@ -22,7 +22,7 @@ const GenericTable: React.FC<GenericTableProps> = ({
   columns,
   rows,
   rowsPerPageOptions = [10, 25, 100],
-  maxHeight = 600,
+  maxHeight = 668,
 }) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(rowsPerPageOptions[0]);
@@ -39,16 +39,27 @@ const GenericTable: React.FC<GenericTableProps> = ({
   };
 
   return (
-    <S.TableWrapper sx={{ width: '100%', overflow: 'hidden' }}>
-      <TableContainer sx={{ maxHeight }}>
-        <Table stickyHeader aria-label="generic table">
-          <TableHead>
-            <TableRow>
+    <Paper sx={{ width: '100%',
+                 overflow: 'hidden',
+                 backgroundColor: '#1991C5',
+                }}>
+      <TableContainer sx={{ maxHeight,  }}> 
+        <Table stickyHeader aria-label="generic table"
+          sx={{ 
+              
+           }}>
+          <TableHead sx={{}} >
+            <TableRow >
               {columns.map((column) => (
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth }}
+                  sx={{ minWidth: column.minWidth,
+                        backgroundColor: '#134D5A',
+                        border: '1px solid #134D5A',
+                        fontSize: '17px',
+                        fontWeight: '600',
+                       }} 
                 >
                   {column.label}
                 </TableCell>
@@ -59,12 +70,21 @@ const GenericTable: React.FC<GenericTableProps> = ({
             {rows
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row, index) => (
-                <TableRow hover role="checkbox" tabIndex={-1} key={index}>
+                <TableRow hover role="checkbox" tabIndex={-1} key={index} sx={{
+                  backgroundColor: '#20698E',
+
+                }}>
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (
-                      <TableCell key={column.id} align={column.align}>
-                        {column.format ? column.format(value) : value}
+                      <TableCell key={column.id} align={column.align} 
+                        sx={{
+                            border: '0px',
+                            borderRadius: '0px',
+                            fontSize: '15px',
+                            fontWeight: '500',
+                        }}>
+                        {column.format ? column.format(value) : typeof value === 'boolean' ? (value ? 'Sim' : 'Não') : value}
                       </TableCell>
                     );
                   })}
@@ -81,8 +101,13 @@ const GenericTable: React.FC<GenericTableProps> = ({
         page={page}
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
+        sx={{
+          backgroundColor: '#134D5A', 
+          fontSize: '18px',
+          fontWeight: '600',
+        }}
       />
-    </S.TableWrapper>
+    </Paper>
   );
 };
 

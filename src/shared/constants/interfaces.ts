@@ -4,6 +4,8 @@ export interface ISales {
     sobremesas: number;
     total: number;
     formaPagamento: string;
+    quentinha: boolean;
+    quantidadeQuentinhas: number;
 };
 
 export interface ColumnTable {
