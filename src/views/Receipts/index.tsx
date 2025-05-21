@@ -11,9 +11,12 @@ const Receipts = () => {
         <S.ReceiptsContainer>
             <S.ReceiptsHeader>
                 <ReturnPage/>
-                
                 <PageTitle title="Vendas"/>
             </S.ReceiptsHeader>
+            <S.ReceiptsSearchContainer>
+                <div>filtros para a tabela</div>
+                <div>botao para cadastrar nova venda</div>
+            </S.ReceiptsSearchContainer>
             
             <S.ReceiptsTableContainer>
                 <ReceiptsTable Sales={MockedSales} />

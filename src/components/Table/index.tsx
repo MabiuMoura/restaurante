@@ -22,7 +22,7 @@ const GenericTable: React.FC<GenericTableProps> = ({
   columns,
   rows,
   rowsPerPageOptions = [10, 25, 100],
-  maxHeight = 668,
+  maxHeight = 613,
 }) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(rowsPerPageOptions[0]);
@@ -41,9 +41,30 @@ const GenericTable: React.FC<GenericTableProps> = ({
   return (
     <Paper sx={{ width: '100%',
                  overflow: 'hidden',
-                 backgroundColor: '#1991C5',
+                 backgroundColor: '#7DAA92',
                 }}>
-      <TableContainer sx={{ maxHeight,  }}> 
+      <TableContainer
+        sx={{
+          maxHeight,
+          '&::-webkit-scrollbar': {
+            width: '10px',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: '#C2FBEF',
+            borderRadius: '10px',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: '#325C52',
+            borderRadius: '10px',
+            border: '2px solid #C2FBEF',
+          },
+          '&::-webkit-scrollbar-thumb:hover': {
+            backgroundColor: '#23403B',
+          },
+          scrollbarColor: '#325C52 #C2FBEF', 
+          scrollbarWidth: 'thin', 
+        }}
+        >
         <Table stickyHeader aria-label="generic table"
           sx={{ 
               
@@ -55,8 +76,8 @@ const GenericTable: React.FC<GenericTableProps> = ({
                   key={column.id}
                   align={column.align}
                   sx={{ minWidth: column.minWidth,
-                        backgroundColor: '#134D5A',
-                        border: '1px solid #134D5A',
+                        backgroundColor: '#325C52',
+                        border: '1px solid #C2FBEF',
                         fontSize: '17px',
                         fontWeight: '600',
                        }} 
@@ -71,7 +92,7 @@ const GenericTable: React.FC<GenericTableProps> = ({
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row, index) => (
                 <TableRow hover role="checkbox" tabIndex={-1} key={index} sx={{
-                  backgroundColor: '#20698E',
+                  backgroundColor: '#90AFB7',
 
                 }}>
                   {columns.map((column) => {
@@ -79,8 +100,7 @@ const GenericTable: React.FC<GenericTableProps> = ({
                     return (
                       <TableCell key={column.id} align={column.align} 
                         sx={{
-                            border: '0px',
-                            borderRadius: '0px',
+                            border: '1px solid #C2FBEF',
                             fontSize: '15px',
                             fontWeight: '500',
                         }}>
@@ -102,7 +122,7 @@ const GenericTable: React.FC<GenericTableProps> = ({
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
         sx={{
-          backgroundColor: '#134D5A', 
+          backgroundColor: '#325C52', 
           fontSize: '18px',
           fontWeight: '600',
         }}
