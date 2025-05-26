@@ -6,6 +6,8 @@ import PageTitle from "../../components/PageTitle";
 import ComboBox from "../../components/ComboBox";
 import { useState } from "react";
 import SwitchButton from "../../components/SwitchButton";
+import CommonButton from "../../components/CommonButton";
+import Modal from "../../components/Modal";
 
 const Receipts = () => {
     const [hasQuentinha, setHasQuentinha] = useState(false);
@@ -13,6 +15,11 @@ const Receipts = () => {
 
     const [formaPagamento, setFormaPagamento] = useState('Todas');
     const formasPagamento = ['Credito', 'Debito', 'Pix', 'Dinheiro'];
+
+    const [ModalOpen, setModalOpen] = useState(false);
+    const handleModalOpen = () => {
+        setModalOpen(true);
+    }
 
     return (
         <S.ReceiptsContainer>
@@ -40,6 +47,13 @@ const Receipts = () => {
                         defaultOption="Nenhum" />
 
                 </S.SearchFiltersContainer>
+                <S.OpenModalButtonContainer>
+                    <CommonButton onClick={handleModalOpen} title="Cadastrar Venda" />
+                </S.OpenModalButtonContainer>
+                
+                <Modal title="Cadastrar Venda" onClose={() => setModalOpen(false)} isOpen={ModalOpen}>
+                    <h3>TESTE</h3>
+                </Modal>
             </S.ReceiptsSearchContainer>
             
             <S.ReceiptsTableContainer>

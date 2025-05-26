@@ -19,7 +19,7 @@ export const Select = styled.select`
   border: 1px solid #ccc;
   font-size: 14px;
   outline: none;
-
+  cursor: pointer;
   &:focus {
     border-color: #555;
   }

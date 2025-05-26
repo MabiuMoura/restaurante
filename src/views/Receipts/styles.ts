@@ -7,7 +7,7 @@ export const ReceiptsContainer = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    padding-bottom:50px;
+    padding: 0px 10px 30px 10px;
 `
 
 export const ReceiptsHeader = styled.div`
@@ -16,25 +16,29 @@ export const ReceiptsHeader = styled.div`
     display:flex;
     justify-content:start;
     align-items:center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     gap: 50px;
 `
 
 export const ReceiptsSearchContainer = styled.div`
     display: flex;
-    padding: 0px 50px;
     width: 100%;
-    height: 50px;
+    height: 150px;
     align-items: center;
+    //background-color:red;
     flex-direction: row;
     justify-content: space-between;
 `
 
 export const SearchFiltersContainer = styled.div`
   display: grid;
-  gap: 10px;
   width:350px;
   grid-template-columns: 1fr 1fr;
+`
+
+export const OpenModalButtonContainer = styled.div`
+    width: 180px;
+    height:55px;
 `
 
 export const ReceiptsTableContainer = styled.div`
