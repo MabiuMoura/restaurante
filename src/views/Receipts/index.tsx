@@ -3,10 +3,17 @@ import ReceiptsTable from "./components/TableReceipts";
 import * as S from "./styles";
 import { MockedSales } from './Mock/datas';
 import PageTitle from "../../components/PageTitle";
-
-
+import ComboBox from "../../components/ComboBox";
+import { useState } from "react";
+import SwitchButton from "../../components/SwitchButton";
 
 const Receipts = () => {
+    const [hasQuentinha, setHasQuentinha] = useState(false);
+    const [hasSobremesa, setHasSobremesa] = useState(false);
+
+    const [formaPagamento, setFormaPagamento] = useState('Todas');
+    const formasPagamento = ['Credito', 'Debito', 'Pix', 'Dinheiro'];
+
     return (
         <S.ReceiptsContainer>
             <S.ReceiptsHeader>
@@ -14,8 +21,25 @@ const Receipts = () => {
                 <PageTitle title="Vendas"/>
             </S.ReceiptsHeader>
             <S.ReceiptsSearchContainer>
-                <div>filtros para a tabela</div>
-                <div>botao para cadastrar nova venda</div>
+                <S.SearchFiltersContainer>
+                    <SwitchButton
+                        title="Teve Quentinha"
+                        checked={hasQuentinha} 
+                        onChange={(value) => setHasQuentinha(value)} />
+
+                    <SwitchButton
+                        title="Teve Sobremesa"
+                        checked={hasSobremesa} 
+                        onChange={(value) => setHasSobremesa(value)} />
+
+                    <ComboBox
+                        title="Forma de Pagamento"
+                        options={formasPagamento}
+                        selected={formaPagamento}
+                        onChange={setFormaPagamento}
+                        defaultOption="Nenhum" />
+
+                </S.SearchFiltersContainer>
             </S.ReceiptsSearchContainer>
             
             <S.ReceiptsTableContainer>

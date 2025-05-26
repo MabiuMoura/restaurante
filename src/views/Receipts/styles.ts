@@ -22,7 +22,6 @@ export const ReceiptsHeader = styled.div`
 
 export const ReceiptsSearchContainer = styled.div`
     display: flex;
-    background-color:red;
     padding: 0px 50px;
     width: 100%;
     height: 50px;
@@ -33,7 +32,8 @@ export const ReceiptsSearchContainer = styled.div`
 
 export const SearchFiltersContainer = styled.div`
   display: grid;
-  width:60%;
+  gap: 10px;
+  width:350px;
   grid-template-columns: 1fr 1fr;
 `
 
