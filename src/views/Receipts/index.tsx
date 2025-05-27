@@ -8,6 +8,7 @@ import { useState } from "react";
 import SwitchButton from "../../components/SwitchButton";
 import CommonButton from "../../components/CommonButton";
 import Modal from "../../components/Modal";
+import AddReceiptModal from "./components/Modals/AddReceiptModal";
 
 const Receipts = () => {
     const [hasQuentinha, setHasQuentinha] = useState(false);
@@ -52,7 +53,7 @@ const Receipts = () => {
                 </S.OpenModalButtonContainer>
                 
                 <Modal title="Cadastrar Venda" onClose={() => setModalOpen(false)} isOpen={ModalOpen}>
-                    <h3>TESTE</h3>
+                    <AddReceiptModal></AddReceiptModal>
                 </Modal>
             </S.ReceiptsSearchContainer>
             

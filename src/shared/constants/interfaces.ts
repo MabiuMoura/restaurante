@@ -14,4 +14,6 @@ export interface ColumnTable {
   minWidth?: number;
   align?: 'right' | 'left' | 'center';
   format?: (value: any) => string;
-}
+};
+
+
