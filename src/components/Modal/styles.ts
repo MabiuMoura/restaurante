@@ -14,10 +14,10 @@ export const Overlay = styled.div`
   z-index: 1000;
 `;
 
-export const ModalContainer = styled.div`
+export const ModalContainer = styled.div<{ width?: string,}>`
   background-color: white;
   border-radius: 12px;
-  width: 500px;
+  width: ${({ width }) => width || '500px'};
   max-width: 90%;
   padding: 20px;
   position: relative;

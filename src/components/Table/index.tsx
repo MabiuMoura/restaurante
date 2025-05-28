@@ -40,7 +40,6 @@ const GenericTable: React.FC<GenericTableProps> = ({
 
   return (
     <Paper sx={{ width: '100%',
-                 overflow: 'hidden',
                  backgroundColor: '#7DAA92',
                 }}>
       <TableContainer

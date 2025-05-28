@@ -16,4 +16,9 @@ export interface ColumnTable {
   format?: (value: any) => string;
 };
 
-
+export interface ISelectionOption {
+  label: string;
+  quantity: number;
+  price?: number;
+  selecteds: number;
+}

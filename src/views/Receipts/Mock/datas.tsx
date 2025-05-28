@@ -1,4 +1,4 @@
-import type { ISales } from "../../../shared/constants/interfaces";
+import type { ISales, ISelectionOption } from "../../../shared/constants/interfaces";
 
 
 export const MockedSales : ISales[] = [
@@ -155,4 +155,15 @@ export const MockedSales : ISales[] = [
       quentinha: false,
       quantidadeQuentinhas: 0,
     },
+];
+
+
+export const MockedDrinks : ISelectionOption[] = [
+    { label: "Coca-Cola", quantity: 0, price: 5.00, selecteds: 0 },
+    { label: "Guaraná", quantity: 0, price: 4.50, selecteds: 0 },
+    { label: "Água", quantity: 0, price: 2.00, selecteds: 0 },
+    { label: "Suco de Laranja", quantity: 0, price: 6.00, selecteds: 0 },
+    { label: "Cerveja", quantity: 0, price: 8.00, selecteds: 0 },
+    { label: "Refrigerante Diet", quantity: 0, price: 5.50, selecteds: 0 },
+    
 ];

@@ -6,9 +6,10 @@ interface ModalProps {
   onClose: () => void;
   isOpen: boolean;
   children: React.ReactNode;
+  width?: string;
 }
 
-const Modal = ({ title, onClose, isOpen, children }:ModalProps)   => {
+const Modal = ({ title, onClose, isOpen, children, width }:ModalProps)   => {
 
     const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
         if (e.target === e.currentTarget) {
@@ -36,7 +37,7 @@ const Modal = ({ title, onClose, isOpen, children }:ModalProps)   => {
 
       return (
         <S.Overlay onClick={handleOverlayClick} >
-            <S.ModalContainer>
+            <S.ModalContainer width={width}>
                 <S.ModalHeader>
                     <S.ModalTitle>{title}</S.ModalTitle>
                     <S.CloseIcon onClick={onClose} />

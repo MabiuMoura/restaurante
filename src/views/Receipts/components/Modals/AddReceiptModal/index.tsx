@@ -1,12 +1,16 @@
-import {Form, useForm} from 'react-hook-form';
+import { useForm} from 'react-hook-form';
 import { toast } from "react-toastify";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { addReceipt } from '../../../../../shared/constants/schemas';
-import CommonInput from '../../../../../components/CommonInput';
+import MultiItemInput from '../../../../../components/Inputs/MultiItemInput';
 import * as S from './styles';
+import MultiSelectionDropdown from '../../../../../components/Dropdowns/MultiSelectionDropdown';
+import { useState } from 'react';
+import { MockedDrinks } from '../../../Mock/datas';
 
 
 const AddReceiptModal = () => {
+    
     const {
         register,
         handleSubmit,
@@ -21,7 +25,7 @@ const AddReceiptModal = () => {
 
     return (
         <S.Form  onSubmit={handleSubmit(onSubmit)}>
-            <CommonInput
+            <MultiItemInput
                 label="Almoços"
                 name="almocos"
                 type="number"
@@ -31,7 +35,7 @@ const AddReceiptModal = () => {
                 onBlur={register("almocos").onBlur}
                 errorMessage={errors.almocos?.message}
             />
-            <CommonInput
+            <MultiItemInput
                 label="Quentinhas"
                 name="quentinhas"
                 type="number"
@@ -42,7 +46,7 @@ const AddReceiptModal = () => {
                 errorMessage={errors.quentinhas?.message}
             />
 
-            <CommonInput
+            <MultiItemInput
                 label="Sobremesas"
                 name="sobremesas"
                 type="number"
@@ -53,7 +57,7 @@ const AddReceiptModal = () => {
                 errorMessage={errors.sobremesas?.message}
             />
 
-            <CommonInput
+            <MultiItemInput
                 label="Bebidas"
                 name="bebidas"
                 type="number"
@@ -63,6 +67,12 @@ const AddReceiptModal = () => {
                 onBlur={register("bebidas").onBlur}
                 errorMessage={errors.bebidas?.message}
             />
+
+            <MultiSelectionDropdown 
+                options={MockedDrinks} 
+                selectedOptions={[]} >
+                
+            </MultiSelectionDropdown>
 
             <button type="submit">Enviar</button>
                 </S.Form>

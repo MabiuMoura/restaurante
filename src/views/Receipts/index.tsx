@@ -52,7 +52,7 @@ const Receipts = () => {
                     <CommonButton onClick={handleModalOpen} title="Cadastrar Venda" />
                 </S.OpenModalButtonContainer>
                 
-                <Modal title="Cadastrar Venda" onClose={() => setModalOpen(false)} isOpen={ModalOpen}>
+                <Modal title="Cadastrar Venda" width="900px" onClose={() => setModalOpen(false)} isOpen={ModalOpen}>
                     <AddReceiptModal></AddReceiptModal>
                 </Modal>
             </S.ReceiptsSearchContainer>
