@@ -70,7 +70,8 @@ const AddReceiptModal = () => {
 
             <MultiSelectionDropdown 
                 options={MockedDrinks} 
-                selectedOptions={[]} >
+                selectedOptions={[]}
+                label='Selecione as Bebidas' >
                 
             </MultiSelectionDropdown>
 

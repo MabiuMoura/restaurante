@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { IoIosRemoveCircleOutline, IoIosAddCircleOutline  } from "react-icons/io";
-
-
+import { CiSquareChevDown, CiSquareChevUp  } from "react-icons/ci";
 
 export const ExternalContainer = styled.div`
     position: relative;
@@ -31,6 +30,17 @@ export const HeaderTitle = styled.h3`
     margin: 0; 
     font-size: 16px;
     font-weight: 600;
+    user-select:none;
+`
+
+export const OpenDropdownIcon = styled(CiSquareChevDown)`
+    width:25px;
+    height:25px;
+`
+
+export const CloseDropdownIcon = styled(CiSquareChevUp)`
+    width:25px;
+    height:25px;
 `
 
 export const OptionsList = styled.ul`
@@ -49,12 +59,33 @@ export const OptionItem = styled.li`
     height:35px;
     width: 100%;
     padding: 5px 0;
+    user-select:none;
 `
 
 export const OptionLabel = styled.label`
     font-size: 14px;
+    width: 50%;
     color: #333;
 `;
+
+export const PriceAndIconsContainer = styled.div`
+    display: flex;
+    flex-direction:row;
+    justify-content:end;
+    align-items:center;
+    gap: 5px;
+    width: 50%;
+`
+
+export const CounterContainer = styled.div`
+    width:45px;
+    display: flex;
+    flex-direction:row;
+    
+    justify-content:end;
+    align-items:center;
+    gap: 5px;
+`
 
 export const OptionPrice = styled.span`
     margin-right: 0;

@@ -45,23 +45,6 @@ const GenericTable: React.FC<GenericTableProps> = ({
       <TableContainer
         sx={{
           maxHeight,
-          '&::-webkit-scrollbar': {
-            width: '10px',
-          },
-          '&::-webkit-scrollbar-track': {
-            backgroundColor: '#C2FBEF',
-            borderRadius: '10px',
-          },
-          '&::-webkit-scrollbar-thumb': {
-            backgroundColor: '#325C52',
-            borderRadius: '10px',
-            border: '2px solid #C2FBEF',
-          },
-          '&::-webkit-scrollbar-thumb:hover': {
-            backgroundColor: '#23403B',
-          },
-          scrollbarColor: '#325C52 #C2FBEF', 
-          scrollbarWidth: 'thin', 
         }}
         >
         <Table stickyHeader aria-label="generic table"
