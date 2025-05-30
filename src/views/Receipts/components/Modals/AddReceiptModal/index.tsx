@@ -2,15 +2,15 @@ import { useForm} from 'react-hook-form';
 import { toast } from "react-toastify";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { addReceipt } from '../../../../../shared/constants/schemas';
-import MultiItemInput from '../../../../../components/Inputs/MultiItemInput';
+import CommonInput from '../../../../../components/Inputs/CommonInput';
 import * as S from './styles';
 import MultiSelectionDropdown from '../../../../../components/Dropdowns/MultiSelectionDropdown';
 import { useState } from 'react';
 import { MockedDrinks } from '../../../Mock/datas';
+import CustomizedPriceInput from '../../../../../components/Inputs/CustomizedPriceInput';
 
 
 const AddReceiptModal = () => {
-    
     const {
         register,
         handleSubmit,
@@ -25,7 +25,7 @@ const AddReceiptModal = () => {
 
     return (
         <S.Form  onSubmit={handleSubmit(onSubmit)}>
-            <MultiItemInput
+            <CustomizedPriceInput
                 label="Almoços"
                 name="almocos"
                 type="number"
@@ -35,7 +35,7 @@ const AddReceiptModal = () => {
                 onBlur={register("almocos").onBlur}
                 errorMessage={errors.almocos?.message}
             />
-            <MultiItemInput
+            <CommonInput
                 label="Quentinhas"
                 name="quentinhas"
                 type="number"
@@ -46,7 +46,7 @@ const AddReceiptModal = () => {
                 errorMessage={errors.quentinhas?.message}
             />
 
-            <MultiItemInput
+            <CommonInput
                 label="Sobremesas"
                 name="sobremesas"
                 type="number"
@@ -57,7 +57,7 @@ const AddReceiptModal = () => {
                 errorMessage={errors.sobremesas?.message}
             />
 
-            <MultiItemInput
+            <CommonInput
                 label="Bebidas"
                 name="bebidas"
                 type="number"

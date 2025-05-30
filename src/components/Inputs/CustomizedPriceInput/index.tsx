@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-type MultiItemInputProps = {
+type CustomizedPriceInputProps = {
   label: string;
   name: string;
   type?: string;
@@ -12,7 +12,7 @@ type MultiItemInputProps = {
   inputRef?: React.Ref<HTMLInputElement>;
 };
 
-const MultiItemInput = ({
+const CustomizedPriceInput = ({
   label,
   name,
   type = "text",
@@ -22,7 +22,7 @@ const MultiItemInput = ({
   onChange,
   onBlur,
   inputRef,
-}:MultiItemInputProps) => {
+}:CustomizedPriceInputProps) => {
 
   return (
     <S.Wrapper>
@@ -45,4 +45,4 @@ const MultiItemInput = ({
   );
 }
 
-export default MultiItemInput;
+export default CustomizedPriceInput;

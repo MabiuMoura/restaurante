@@ -21,4 +21,6 @@ export interface ISelectionOption {
   quantity: number;
   price?: number;
   selecteds: number;
+  editedPrice?: boolean;
+  newPrice?: number; 
 }

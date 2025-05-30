@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { IoIosRemoveCircleOutline, IoIosAddCircleOutline  } from "react-icons/io";
 import { CiSquareChevDown, CiSquareChevUp  } from "react-icons/ci";
+import { FiEdit2 } from "react-icons/fi";
 
 export const ExternalContainer = styled.div`
     position: relative;
@@ -34,19 +35,22 @@ export const HeaderTitle = styled.h3`
 `
 
 export const OpenDropdownIcon = styled(CiSquareChevDown)`
-    width:25px;
-    height:25px;
+    width:27px;
+    height:27px;
+    cursor: pointer;
 `
 
 export const CloseDropdownIcon = styled(CiSquareChevUp)`
-    width:25px;
-    height:25px;
+    width:27px;
+    height:27px;
+    cursor: pointer;
 `
 
 export const OptionsList = styled.ul`
     list-style: none;
+    display: flex;
+    flex-direction: column;
     margin: 0;
-    padding: 10px;
     max-height: 200px;
     width: 100%;
     overflow-y: auto;
@@ -58,8 +62,13 @@ export const OptionItem = styled.li`
     justify-content: space-between;
     height:35px;
     width: 100%;
-    padding: 5px 0;
+    padding: 20px 15px;
+    border-radius: 5px;
     user-select:none;
+    border-bottom: 1px solid #ccc;
+    &:hover {
+        background-color: #E0E4E8;
+    }
 `
 
 export const OptionLabel = styled.label`
@@ -78,30 +87,37 @@ export const PriceAndIconsContainer = styled.div`
 `
 
 export const CounterContainer = styled.div`
-    width:45px;
+    width:48px;
     display: flex;
     flex-direction:row;
     
     justify-content:end;
     align-items:center;
-    gap: 5px;
+    gap: 10px;
+`
+
+export const EditPriceIcon = styled(FiEdit2)`
+    color: black;
+    cursor: pointer;
+    width: 19px;
+    height: 19px;
 `
 
 export const OptionPrice = styled.span`
     margin-right: 0;
-    font-size: 14px;
+    font-size: 15px;
 `;
 
 export const AddItemButton = styled(IoIosAddCircleOutline)`
     color: black;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 `;
 
 export const RemoveItemButton = styled(IoIosRemoveCircleOutline)`
     color: black; 
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 `;

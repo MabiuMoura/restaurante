@@ -52,19 +52,18 @@ const MultiSelectionDropdown = ({ options, label }: MultiSelectionDropdownProps)
                             <S.OptionItem key={option.label}>
                                 <S.OptionLabel>{option.label}</S.OptionLabel>
                                 <S.PriceAndIconsContainer>
+                                    <S.EditPriceIcon></S.EditPriceIcon>
                                     <S.OptionPrice>
-                                        {option.price ? `+ R$ ${option.price.toFixed(2)}` : "Grátis"}
+                                        {option.price ? `R$ ${option.price.toFixed(2)}` : "Grátis"}
                                     </S.OptionPrice>
-                                    <>
-                                        {option.selecteds > 0 ? (
-                                            <S.CounterContainer>
-                                                <S.RemoveItemButton onClick={() => handleRemoveItem(option)} />
-                                                <span>{option.selecteds}</span>
-                                            </S.CounterContainer>
-                                        ) : (
-                                            <div style={{ width: '45px' }} /> 
-                                        )}
-                                        </>
+                                    {option.selecteds > 0 ? (
+                                        <S.CounterContainer>
+                                            <S.RemoveItemButton onClick={() => handleRemoveItem(option)} />
+                                            <span>{option.selecteds}</span>
+                                        </S.CounterContainer>
+                                    ) : (
+                                        <div style={{ width: '48px' }} /> 
+                                    )}
                                     <S.AddItemButton onClick={() => handleAddItem(option)} />
                                 </S.PriceAndIconsContainer>
                             </S.OptionItem>
