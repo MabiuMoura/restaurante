@@ -1,16 +1,19 @@
-import { useForm} from 'react-hook-form';
+import { set, useForm} from 'react-hook-form';
 import { toast } from "react-toastify";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { addReceipt } from '../../../../../shared/constants/schemas';
 import CommonInput from '../../../../../components/Inputs/CommonInput';
 import * as S from './styles';
 import MultiSelectionDropdown from '../../../../../components/Dropdowns/MultiSelectionDropdown';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MockedDrinks, MockedLunch } from '../../../Mock/datas';
 import CustomizedPriceInput from '../../../../../components/Inputs/CustomizedPriceInput';
-
+import { Itens } from '../../../../../services/endpoints';
+import type { ISelectionOption } from '../../../../../shared/constants/interfaces';
 
 const AddReceiptModal = () => {
+    const [drinks, setDrinks] = useState<ISelectionOption[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
     const {
         register,
         handleSubmit,
@@ -18,7 +21,23 @@ const AddReceiptModal = () => {
         } = useForm({ resolver: zodResolver(addReceipt),
     });
 
-     const onSubmit = (data: any) => {
+    const fetchDrinks = async () => {
+        setLoading(true);
+        try {
+            console.log("Buscando bebidas...");
+            const response = await Itens.bebidas.listar();
+            setDrinks(response);
+        } catch (error) {
+            console.error("Erro ao buscar bebidas:", error);
+            toast.error("Erro ao buscar bebidas.");
+        }
+    }
+
+    useEffect(() => {
+        fetchDrinks();
+    }, []);
+
+    const onSubmit = (data: any) => {
         console.log(data);
         toast.success("Recibo adicionado com sucesso!");
     };
@@ -32,7 +51,7 @@ const AddReceiptModal = () => {
                 
             </MultiSelectionDropdown>
             <MultiSelectionDropdown 
-                options={MockedDrinks} 
+                options={drinks} 
                 selectedOptions={[]}
                 label='Selecione as Bebidas' >
                 

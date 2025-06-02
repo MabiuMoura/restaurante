@@ -159,18 +159,17 @@ export const MockedSales : ISales[] = [
 
 
 export const MockedDrinks : ISelectionOption[] = [
-    { label: "Coca-Cola", quantity: 0, price: 5.00, selecteds: 0 },
-    { label: "Guaraná", quantity: 0, price: 4.50, selecteds: 0 },
-    { label: "Água", quantity: 0, price: 2.00, selecteds: 0 },
-    { label: "Suco de Laranja", quantity: 0, price: 6.00, selecteds: 0 },
-    { label: "Cerveja", quantity: 0, price: 8.00, selecteds: 0 },
-    { label: "Refrigerante Diet", quantity: 0, price: 5.50, selecteds: 0 },
-    
+    { id: 0,label: "Coca-Cola", quantity: 0, price: 5.00, selecteds: 0 },
+    { id: 1,label: "Guaraná", quantity: 0, price: 4.50, selecteds: 0 },
+    { id: 2,label: "Água", quantity: 0, price: 2.00, selecteds: 0 },
+    { id: 3,label: "Suco de Laranja", quantity: 0, price: 6.00, selecteds: 0 },
+    { id: 4,label: "Cerveja", quantity: 0, price: 8.00, selecteds: 0 },
+    { id: 5,label: "Refrigerante Diet", quantity: 0, price: 5.50, selecteds: 0 },
 ];
 
 export const MockedLunch : ISelectionOption[] = [
-    { label: "Almoço", quantity: 0, price: 18.90 , selecteds: 0 },
-    { label: "Quentinha", quantity: 0, price: 18.90, selecteds: 0 },
-    { label: "Almoço Especial", quantity: 0, price: 0, selecteds: 0 },
+    { id: 0,label: "Almoço", quantity: 0, price: 18.90 , selecteds: 0 },
+    { id: 1,label: "Quentinha", quantity: 0, price: 18.90, selecteds: 0 },
+    { id: 2,label: "Almoço Especial", quantity: 0, price: 0, selecteds: 0 },
     
 ];

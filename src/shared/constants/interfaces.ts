@@ -17,6 +17,7 @@ export interface ColumnTable {
 };
 
 export interface ISelectionOption {
+  id: number;
   label: string;
   quantity: number;
   price?: number;
