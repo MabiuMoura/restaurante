@@ -167,3 +167,10 @@ export const MockedDrinks : ISelectionOption[] = [
     { label: "Refrigerante Diet", quantity: 0, price: 5.50, selecteds: 0 },
     
 ];
+
+export const MockedLunch : ISelectionOption[] = [
+    { label: "Almoço", quantity: 0, price: 18.90 , selecteds: 0 },
+    { label: "Quentinha", quantity: 0, price: 18.90, selecteds: 0 },
+    { label: "Almoço Especial", quantity: 0, price: 0, selecteds: 0 },
+    
+];

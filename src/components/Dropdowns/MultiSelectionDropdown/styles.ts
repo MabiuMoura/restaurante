@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { IoIosRemoveCircleOutline, IoIosAddCircleOutline  } from "react-icons/io";
 import { CiSquareChevDown, CiSquareChevUp  } from "react-icons/ci";
 import { FiEdit2 } from "react-icons/fi";
+import { PiKeyReturnLight } from "react-icons/pi";
 
 export const ExternalContainer = styled.div`
     position: relative;
@@ -54,6 +55,7 @@ export const OptionsList = styled.ul`
     max-height: 200px;
     width: 100%;
     overflow-y: auto;
+    transition: 0.2s ease;
 `
 
 export const OptionItem = styled.li`
@@ -121,3 +123,19 @@ export const RemoveItemButton = styled(IoIosRemoveCircleOutline)`
     width: 22px;
     height: 22px;
 `;
+
+export const EditPriceContainer = styled.div`
+    width: 70%;
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+`
+
+export const CancelEditPrice = styled(PiKeyReturnLight)`
+    width: 22px;
+    height: 22px;
+    transition: 0.2s ease;
+    cursor: pointer;
+`

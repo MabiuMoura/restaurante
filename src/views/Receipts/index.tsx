@@ -53,7 +53,7 @@ const Receipts = () => {
                 </S.OpenModalButtonContainer>
                 
                 <Modal title="Cadastrar Venda" width="900px" onClose={() => setModalOpen(false)} isOpen={ModalOpen}>
-                    <AddReceiptModal></AddReceiptModal>
+                    <AddReceiptModal />
                 </Modal>
             </S.ReceiptsSearchContainer>
             

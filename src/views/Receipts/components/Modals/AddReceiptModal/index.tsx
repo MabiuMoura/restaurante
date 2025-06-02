@@ -6,7 +6,7 @@ import CommonInput from '../../../../../components/Inputs/CommonInput';
 import * as S from './styles';
 import MultiSelectionDropdown from '../../../../../components/Dropdowns/MultiSelectionDropdown';
 import { useState } from 'react';
-import { MockedDrinks } from '../../../Mock/datas';
+import { MockedDrinks, MockedLunch } from '../../../Mock/datas';
 import CustomizedPriceInput from '../../../../../components/Inputs/CustomizedPriceInput';
 
 
@@ -25,26 +25,18 @@ const AddReceiptModal = () => {
 
     return (
         <S.Form  onSubmit={handleSubmit(onSubmit)}>
-            <CustomizedPriceInput
-                label="Almoços"
-                name="almocos"
-                type="number"
-                placeholder="Quantidade de almoços"
-                inputRef={register("almocos", { valueAsNumber: true }).ref}
-                onChange={register("almocos").onChange}
-                onBlur={register("almocos").onBlur}
-                errorMessage={errors.almocos?.message}
-            />
-            <CommonInput
-                label="Quentinhas"
-                name="quentinhas"
-                type="number"
-                placeholder="Quantidade de quentinhas"
-                inputRef={register("quentinhas", { valueAsNumber: true }).ref}
-                onChange={register("quentinhas").onChange}
-                onBlur={register("quentinhas").onBlur}
-                errorMessage={errors.quentinhas?.message}
-            />
+            <MultiSelectionDropdown 
+                options={MockedLunch} 
+                selectedOptions={[]}
+                label='Defina os Almoços' >
+                
+            </MultiSelectionDropdown>
+            <MultiSelectionDropdown 
+                options={MockedDrinks} 
+                selectedOptions={[]}
+                label='Selecione as Bebidas' >
+                
+            </MultiSelectionDropdown>
 
             <CommonInput
                 label="Sobremesas"
@@ -56,24 +48,6 @@ const AddReceiptModal = () => {
                 onBlur={register("sobremesas").onBlur}
                 errorMessage={errors.sobremesas?.message}
             />
-
-            <CommonInput
-                label="Bebidas"
-                name="bebidas"
-                type="number"
-                placeholder="Quantidade de bebidas"
-                inputRef={register("bebidas", { valueAsNumber: true }).ref}
-                onChange={register("bebidas").onChange}
-                onBlur={register("bebidas").onBlur}
-                errorMessage={errors.bebidas?.message}
-            />
-
-            <MultiSelectionDropdown 
-                options={MockedDrinks} 
-                selectedOptions={[]}
-                label='Selecione as Bebidas' >
-                
-            </MultiSelectionDropdown>
 
             <button type="submit">Enviar</button>
                 </S.Form>

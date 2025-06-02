@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
   * {
     margin: 0;
     padding: 0;
@@ -13,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     position: fixed;
     touch-action: none;
+    font-family: 'Roboto', sans-serif;
   }
 
   *::-webkit-scrollbar {
