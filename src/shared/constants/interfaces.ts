@@ -1,12 +1,12 @@
-export interface ISales {
-    almocos: number;
-    bebidas: number;
-    sobremesas: number;
-    total: number;
-    formaPagamento: string;
-    quentinha: boolean;
-    quantidadeQuentinhas: number;
-};
+export interface ISale {
+  almocos: ISaleItem[];       
+  bebidas: ISaleItem[];       
+  sobremesas: ISaleItem[];    
+  total: number;              
+  formaPagamento: string;     
+  quentinha: boolean;         
+  quantidadeQuentinhas: number;
+}
 
 export interface ColumnTable {
   id: string;
@@ -16,12 +16,11 @@ export interface ColumnTable {
   format?: (value: any) => string;
 };
 
-export interface ISelectionOption {
-  id: number;
-  label: string;
-  quantity: number;
-  price?: number;
-  selecteds: number;
-  editedPrice?: boolean;
-  newPrice?: number; 
+export interface ISaleItem {
+  id: number;            
+  label: string;         
+  quantity: number;      
+  price: number;         
+  editedPrice?: number;  
 }
+

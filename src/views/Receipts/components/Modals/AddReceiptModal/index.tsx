@@ -1,24 +1,20 @@
-import { set, useForm} from 'react-hook-form';
+import { Controller, useForm} from 'react-hook-form';
 import { toast } from "react-toastify";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { addReceipt } from '../../../../../shared/constants/schemas';
-import CommonInput from '../../../../../components/Inputs/CommonInput';
 import * as S from './styles';
 import MultiSelectionDropdown from '../../../../../components/Dropdowns/MultiSelectionDropdown';
 import { useEffect, useState } from 'react';
-import { MockedDrinks, MockedLunch } from '../../../Mock/datas';
-import CustomizedPriceInput from '../../../../../components/Inputs/CustomizedPriceInput';
+import { MockedLunch } from '../../../Mock/datas';
 import { Itens } from '../../../../../services/endpoints';
-import type { ISelectionOption } from '../../../../../shared/constants/interfaces';
+import type { ISaleItem } from '../../../../../shared/constants/interfaces';
+import { saleValues } from '../../../../../shared/constants/defaultValues';
 
 const AddReceiptModal = () => {
-    const [drinks, setDrinks] = useState<ISelectionOption[]>([]);
+    const [drinks, setDrinks] = useState<ISaleItem[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-        } = useForm({ resolver: zodResolver(addReceipt),
+    const { register, control, handleSubmit, formState: { errors }} = useForm({
+        defaultValues: saleValues
     });
 
     const fetchDrinks = async () => {
@@ -44,32 +40,49 @@ const AddReceiptModal = () => {
 
     return (
         <S.Form  onSubmit={handleSubmit(onSubmit)}>
-            <MultiSelectionDropdown 
-                options={MockedLunch} 
-                selectedOptions={[]}
-                label='Defina os Almoços' >
-                
-            </MultiSelectionDropdown>
-            <MultiSelectionDropdown 
-                options={drinks} 
-                selectedOptions={[]}
-                label='Selecione as Bebidas' >
-                
-            </MultiSelectionDropdown>
-
-            <CommonInput
-                label="Sobremesas"
-                name="sobremesas"
-                type="number"
-                placeholder="Quantidade de sobremesas"
-                inputRef={register("sobremesas", { valueAsNumber: true }).ref}
-                onChange={register("sobremesas").onChange}
-                onBlur={register("sobremesas").onBlur}
-                errorMessage={errors.sobremesas?.message}
+            <Controller
+                name="bebidas"
+                control={control}
+                defaultValue={saleValues.bebidas}
+                render={({ field }) => (
+                    <MultiSelectionDropdown
+                    label="Selecione as Bebidas"
+                    options={drinks}
+                    value={field.value}
+                    onChange={field.onChange}
+                    />
+                )}
             />
-
+            <Controller
+                name="bebidas"
+                control={control}
+                defaultValue={saleValues.bebidas}
+                render={({ field }) => (
+                    <MultiSelectionDropdown 
+                        label="Selecione os Almoços"
+                        options={MockedLunch}
+                        value={field.value}
+                        onChange={field.onChange}
+                    />
+                )}
+            />
+            <Controller
+                name="sobremesas"
+                control={control}
+                defaultValue={saleValues.bebidas}
+                render={({ field }) => (
+                    <MultiSelectionDropdown 
+                        label="Selecione as Sobremesas"
+                        options= {[{
+                                    id: 0, label: 'Sobremesa', quantity: 0, price: 0,  editedPrice: 0
+                                }]}
+                        value={field.value}
+                        onChange={field.onChange}
+                    />
+                )}
+            />
             <button type="submit">Enviar</button>
-                </S.Form>
+        </S.Form>
     )
 }
 

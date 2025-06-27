@@ -3,6 +3,7 @@ import { IoIosRemoveCircleOutline, IoIosAddCircleOutline  } from "react-icons/io
 import { CiSquareChevDown, CiSquareChevUp  } from "react-icons/ci";
 import { FiEdit2 } from "react-icons/fi";
 import { PiKeyReturnLight } from "react-icons/pi";
+import { TbRefresh } from "react-icons/tb";
 
 export const ExternalContainer = styled.div`
     position: relative;
@@ -17,6 +18,18 @@ export const DropdownContainer = styled.div`
     width: 100%;
     border-radius:10px;
     background-color: #AFBCC0;
+    z-index:99;
+    &::before {
+        content: '';
+        position: absolute;
+        top: -12px; 
+        right: 17px;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 12px solid #AFBCC0;
+    }
 `
 
 export const DropdownHeader = styled.div`
@@ -65,7 +78,7 @@ export const OptionItem = styled.li`
     height:35px;
     width: 100%;
     padding: 20px 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     user-select:none;
     border-bottom: 1px solid #ccc;
     &:hover {
@@ -74,7 +87,7 @@ export const OptionItem = styled.li`
 `
 
 export const OptionLabel = styled.label`
-    font-size: 14px;
+    font-size: 13px;
     width: 50%;
     color: #333;
 `;
@@ -82,46 +95,53 @@ export const OptionLabel = styled.label`
 export const PriceAndIconsContainer = styled.div`
     display: flex;
     flex-direction:row;
-    justify-content:end;
+    justify-content:space-between;
     align-items:center;
-    gap: 5px;
+    margin-left:0;
     width: 50%;
 `
 
 export const CounterContainer = styled.div`
     width:48px;
     display: flex;
+    font-size: 15px;
     flex-direction:row;
-    
     justify-content:end;
     align-items:center;
     gap: 10px;
 `
 
+export const RefreshIcon = styled(TbRefresh)`
+    color: black;
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+`
+
 export const EditPriceIcon = styled(FiEdit2)`
     color: black;
     cursor: pointer;
-    width: 19px;
-    height: 19px;
+    width: 17px;
+    height: 17px;
 `
 
 export const OptionPrice = styled.span`
     margin-right: 0;
-    font-size: 15px;
+    font-size: 14px;
 `;
 
 export const AddItemButton = styled(IoIosAddCircleOutline)`
     color: black;
     cursor: pointer;
-    width: 22px;
-    height: 22px;
+    width: 21px;
+    height: 21px;
 `;
 
 export const RemoveItemButton = styled(IoIosRemoveCircleOutline)`
     color: black; 
     cursor: pointer;
-    width: 22px;
-    height: 22px;
+    width: 21px;
+    height: 21px;
 `;
 
 export const EditPriceContainer = styled.div`
@@ -134,8 +154,22 @@ export const EditPriceContainer = styled.div`
 `
 
 export const CancelEditPrice = styled(PiKeyReturnLight)`
-    width: 22px;
-    height: 22px;
-    transition: 0.2s ease;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
 `
+
+export const EditPriceButton = styled.button`
+    background-color: #4CAF50;  
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    &:hover {
+        background-color: #45a049;
+    }
+    &:active {
+        background-color: #3e8e41;
+    }
+    `
