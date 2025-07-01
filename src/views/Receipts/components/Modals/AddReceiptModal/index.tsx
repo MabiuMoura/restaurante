@@ -10,7 +10,12 @@ import { Itens } from '../../../../../services/endpoints';
 import type { ISaleItem } from '../../../../../shared/constants/interfaces';
 import { saleValues } from '../../../../../shared/constants/defaultValues';
 
-const AddReceiptModal = () => {
+interface AddReceiptModalProps {
+  onClose: () => void;
+  onSaleAdded?: () => void;
+}
+
+const AddReceiptModal = ({onClose, onSaleAdded}: AddReceiptModalProps) => {
     const [drinks, setDrinks] = useState<ISaleItem[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const { register, control, handleSubmit, formState: { errors }} = useForm({
@@ -22,7 +27,7 @@ const AddReceiptModal = () => {
         try {
             console.log("Buscando bebidas...");
             const response = await Itens.bebidas.listar();
-            setDrinks(response);
+            setDrinks(response.data);
         } catch (error) {
             console.error("Erro ao buscar bebidas:", error);
             toast.error("Erro ao buscar bebidas.");
